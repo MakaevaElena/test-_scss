@@ -1,8 +1,51 @@
 h1 {
-  color: #40508b; }
+  color: #40508b;
+  background-color: red;
+  font-family: Helvetica, sans-serif; }
 
 p {
   font-family: Helvetica, sans-serif;
-  border: 2px solid red; }
+  border: 2px solid red;
+  background-color: #40508b; }
+
+.wrapper-list {
+  border: 1px outset #40508b;
+  list-style-type: none; }
+  .wrapper-list > li {
+    padding: 5px; }
+    .wrapper-list > li > a {
+      text-decoration: none; }
+      .wrapper-list > li > a:hover {
+        color: red; }
+
+.box p:first-child {
+  -webkit-transform: rotate(60deg);
+  -ms-transform: rotate(60deg);
+  -moz-transform: rotate(60deg);
+  -o-transform: rotate(60deg);
+  transform: rotate(60deg); }
+
+.message .success, .message .error, .message .warning {
+  padding: 10px;
+  color: grey;
+  border: 2px solid black; }
+
+.message .success {
+  border-color: green; }
+.message .error {
+  border-color: orange; }
+.message .warning {
+  border-color: red; }
+
+p:last-child {
+  -webkit-transform: rotate(-20deg);
+  -ms-transform: rotate(-20deg);
+  -moz-transform: rotate(-20deg);
+  -o-transform: rotate(-20deg);
+  transform: rotate(-20deg); }
+
+@media all and (max-width: 768px) {
+  .wrapper-list {
+    background-color: #40508b; } }
 
 /*# sourceMappingURL=style.css.map */

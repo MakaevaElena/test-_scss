@@ -1,15 +1,80 @@
-$primary-color: #40508b;
-$danger-color: red;
-$main-font: Helvetica, sans-serif;
+@import "_variables.scss";
 
 h1 {
   color: $primary-color;
+  background-color: $danger-color;
+  font-family: $main-font;
+
 }
 
 p {
   font-family: $main-font;
   border: 2px solid $danger-color;
+  background-color: $primary-color;
 }
 
+.wrapper-list {
+  border: 1px outset $primary-color;
+  list-style-type: none;
+
+  > li {
+    padding: 5px;
+
+    > a {
+      text-decoration: none;
+      // обращается к текущему селектору, в данном случае к а
+      &:hover {
+        color: $danger-color;
+
+      }
+    }
+  }
+}
+
+//миксины (примесь) выполняет задачу функции из языков программирования.
+//Позволяет получать значения и подставлять их в в свойста
+
+@mixin transform($degree) {
+  -webkit-transform: rotate($degree);
+  -ms-transform: rotate($degree);
+  -moz-transform: rotate($degree);
+  -o-transform: rotate($degree);
+  transform: rotate($degree);
+}
+
+.box {
+  p:first-child {
+    @include transform(60deg);
+  }}
+
+  %message-block {
+    padding: 10px;
+    color: grey;
+    border: 2px solid black;
+  }
+
+  .message {
+    .success {
+      @extend %message-block;
+      border-color: green;
+
+    }
+
+    .error {
+      @extend %message-block;
+      border-color: orange;
+    }
+
+    .warning {
+      @extend %message-block;
+      border-color: red;
+    }
+  }
+
+  p:last-child {
+    @include transform(-20deg);
+  }
 
 
+// media
+@import "media";
